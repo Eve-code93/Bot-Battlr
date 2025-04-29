@@ -13,7 +13,7 @@ const App = () => {
   useEffect(() => {
     const fetchBots = async () => {
       try {
-        const response = await fetch('http://localhost:3000/bots');
+        const response = await fetch('https://bot-battlr-3-v92m.onrender.com/');
         const data = await response.json();
         setBots(data);
       } catch (error) {
