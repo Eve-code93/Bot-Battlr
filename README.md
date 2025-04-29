@@ -29,9 +29,6 @@ Bot Battlr is a frontend React app backed by a mock JSON-server backend. Users c
 
 bot-battlr/ ├── public/ ├── src/ │ ├── components/ │ ├── App.jsx │ └── index.js ├── db.json ├── server.js ├── package.json └── README.md
 
-yaml
-Copy
-Edit
 
 ---
 
@@ -42,30 +39,22 @@ Edit
 git clone https://github.com/your-username/bot-battlr.git
 cd bot-battlr
 2. Install dependencies:
-bash
-Copy
-Edit
+
 npm install
 3. Start JSON server:
-bash
-Copy
-Edit
+
 node server.js
 This will run on http://localhost:4000 or any PORT set in .env.
 
 4. Run the frontend:
-bash
-Copy
-Edit
+
 npm run dev
+
 🌐 Deployment
 ✅ Backend hosted on Render:
-arduino
-Copy
-Edit
+
 https://bot-battlr-3-v92m.onrender.com
+
 ✅ Frontend deployed to Vercel:
-arduino
-Copy
-Edit
+
 https://bot-battlr-bupn.vercel.app/
