@@ -1,15 +1,25 @@
-// bot-battlr/api/server.js
 const jsonServer = require('json-server');
-const path       = require('path');
+const path = require('path');
 
-const server  = jsonServer.create();
-const router  = jsonServer.router(path.join(__dirname, 'db.json'));
-const middle  = jsonServer.defaults();
+const server = jsonServer.create();
+const router = jsonServer.router(path.join(__dirname, 'db.json'));
+const middlewares = jsonServer.defaults();
 
-server.use(middle);
+// Optional: Allow CORS for frontend communication
+server.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+  );
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, DELETE, OPTIONS');
+  next();
+});
+
+server.use(middlewares);
 server.use(router);
 
-const port = process.env.PORT || 4000;
-server.listen(port, () => {
-  console.log(`JSON-Server running on port ${port}`);
+const PORT = process.env.PORT || 4000;
+server.listen(PORT, () => {
+  console.log(`✅ JSON Server is running on port ${PORT}`);
 });
